@@ -5,3 +5,5 @@ Início do projeto
 Adicionando descrição
 
 Melhorias no texto
+
+Testes realizados
