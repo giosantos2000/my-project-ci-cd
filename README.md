@@ -9,3 +9,5 @@ Melhorias no texto
 Testes realizados
 
 Finalização
+
+Teste de CI/CD
