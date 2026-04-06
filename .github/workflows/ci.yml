@@ -1,4 +1,4 @@
-name: Java CI
+name: Java CI/CD
 
 on:
   push:
@@ -25,3 +25,11 @@ jobs:
 
     - name: Rodar código
       run: java -cp simple-java-app/src Main
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+    - name: Simular deploy
+      run: echo "Deploy realizado com sucesso!"
