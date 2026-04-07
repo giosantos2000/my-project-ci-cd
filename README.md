@@ -1,13 +1,5 @@
-# my-project-ci-cd
+Projeto de CI/CD com Docker
 
-Início do projeto
-
-Adicionando descrição
-
-Melhorias no texto
-
-Testes realizados
-
-Finalização
-
-Teste de CI/CD
+- CI com GitHub Actions
+- CD simulado
+- Aplicação Java simples rodando em container Docker
