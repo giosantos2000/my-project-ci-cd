@@ -12,10 +12,10 @@ jobs:
 
     steps:
     - name: Baixar código
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Instalar Java
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v4
       with:
         distribution: 'temurin'
         java-version: '17'
@@ -23,11 +23,16 @@ jobs:
     - name: Compilar código
       run: javac simple-java-app/src/Main.java
 
+    - name: Baixar JUnit
+      run: |
+        curl -L -o junit-platform-console-standalone.jar \
+        https://repo1.maven.org/maven2/org/junit/platform/junit-platform-console-standalone/1.10.0/junit-platform-console-standalone-1.10.0.jar
+
     - name: Compilar testes
-      run: javac -cp .:junit-platform-console-standalone.jar simple-java-app/test/java/MainTest.java
+      run: javac -cp .:junit-platform-console-standalone.jar simple-java-app/test/MainTest.java
 
     - name: Rodar testes
-      run: echo "Simulação de testes executados com sucesso"
+      run: java -jar junit-platform-console-standalone.jar --class-path simple-java-app/test --scan-class-path
 
     - name: Rodar código
       run: java -cp simple-java-app/src Main
